@@ -37,5 +37,5 @@ P.S. - Both global and method-specific hyperparameters can be found in [`setting
 
 
 ## Result
-This is how the resultant plots will look like. 
-![alt text](/results/result.png?raw=true "Sample Output")
+This is how the resultant plots will look like for the command - `python heatmap_script.py -ip ./images/shelby.JPEG -mp ./models/myModel.h5 -hm grad deeplift mp lime shap`. 
+![alt text](/results/exp1.png?raw=true "Sample Output")
