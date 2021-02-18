@@ -1,7 +1,7 @@
 # center-pixel-model
 
-This repo contains the code for our experiments on toy model/dataset for our project - [SAM](https://anhnguyen.me/project/sam/ "SAM").
-We implemented the following ~15 XAI methods - 
+This repo contains the code for our experiments on **toy model/dataset** for our project - [SAM](https://anhnguyen.me/project/sam/ "SAM").
+We implemented the following ~15 XAI methods either by using publicully available code or using our own implementation - 
 - [Gradient](https://arxiv.org/abs/1312.6034)
 - [Guided Backprop](https://arxiv.org/abs/1412.6806)
 - [DeConvNet](https://arxiv.org/abs/1311.2901)
@@ -17,8 +17,10 @@ We implemented the following ~15 XAI methods -
 - [Shap](https://arxiv.org/abs/1705.07874)
 - [Shapley](https://www.sciencedirect.com/science/article/pii/S0305054808000804)
 
-Notes - 
-- Pda is quite slow and takes a while to run. We adapted the [original](https://github.com/lmzintgraf/DeepVis-PredDiff) implementation for our center-pixel model.
+P.S. - Pda is quite slow and takes a while to run. We adapted the [original](https://github.com/lmzintgraf/DeepVis-PredDiff) implementation for our center-pixel model.
+
+## Model Description
+We consider the class of generalized linear models (GLM) i.e. a linear predictor with a link function which can be non-linear. Detailed descriotion can be found [here](Center_Pixel_Model.pdf)
 
 ## Setup
 This project is tested on Python 3.6.7 and `tensorflow-gpu==1.12.0` which [requires](https://www.tensorflow.org/install/source) `Cuda 9.0`.
@@ -41,7 +43,9 @@ P.S. - Both global and method-specific hyperparameters can be found in [`setting
 ## Result
 This is how the resultant plots will look like for the command - `python heatmap_script.py -ip ./images/shelby.JPEG -mp ./models/myModel.h5 -hm grad deeplift mp lime shap`. 
 ![alt text](/results/exp1.png?raw=true "Sample Output")
-P.S. - Row 1 shows the original plot/heatmaps and the second row show the center `5x5` crop of each of the heatmaps. This helps us better get a sense of the relevance given to the center-pixel by a particular heatmap method. 
+P.S. - Row 1 shows the original plot/heatmaps and the second row shows the center `5x5` crop of each of the heatmaps. This helps us better get a sense of the relevance given to the center-pixel by a particular heatmap method. 
 
 ## Takeaways 
+Out experiemnts with this toy datset/mpdel helped us better understand the workings of the heatmap methods and figure out failure modes of various methods.
+For example, `Input x Gradient` method will give zero relevance to the grey (ImageNet black) pixels regardless of their expected relevance because of the multiplication with input pixels. This can be seen in case of the following plot even on an ImageNet model. 
 ![alt text](/results/growing_patch.png?raw=true "Sample Output")
