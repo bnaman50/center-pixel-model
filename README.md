@@ -1,6 +1,6 @@
 # center-pixel-model
 
-This repo contains the code for our experiments on **toy model/dataset** for our project - [SAM](https://anhnguyen.me/project/sam/ "SAM").
+This repo contains the code for our experiments on **toy model/dataset** for our project - [SAM](https://anhnguyen.me/project/sam/ "SAM"). Preliminary experiments can be found [here](https://github.com/bnaman50/basic_perturbation_experiments_xai). 
 We implemented the following ~15 XAI methods either by using publicully available code or using our own implementation - 
 - [Gradient](https://arxiv.org/abs/1312.6034)
 - [Guided Backprop](https://arxiv.org/abs/1412.6806)
