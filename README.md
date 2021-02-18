@@ -39,3 +39,4 @@ P.S. - Both global and method-specific hyperparameters can be found in [`setting
 ## Result
 This is how the resultant plots will look like for the command - `python heatmap_script.py -ip ./images/shelby.JPEG -mp ./models/myModel.h5 -hm grad deeplift mp lime shap`. 
 ![alt text](/results/exp1.png?raw=true "Sample Output")
+P.S. - Row 1 shows the original plot/heatmaps and the second row show the center `5x5` crop of each of the heatmaps. This helps us better get a sense of the relevance given to the center-pixel by a particular heatmap method. 
