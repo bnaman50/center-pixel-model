@@ -47,5 +47,6 @@ P.S. - Row 1 shows the original plot/heatmaps and the second row shows the cente
 
 ## Takeaways 
 Out experiemnts with this toy datset/mpdel helped us better understand the workings of the heatmap methods and figure out failure modes of various methods.
-For example, `Input x Gradient` method will give zero relevance to the grey (ImageNet black) pixels regardless of their expected relevance because of the multiplication with input pixels. This can be seen in case of the following plot even on an ImageNet model. 
+For example, `Input x Gradient` method will give zero relevance to the grey (ImageNet black) pixels regardless of their expected relevance because of the multiplication with input pixels. This can be seen in case of the following plot even on an ImageNet model albeit in an extreme scenario. As the grey-patch grows, heatmap becomes zero. 
 ![alt text](/results/growing_patch.png?raw=true "Sample Output")
+P.S. - To the authors credit, this part was mentioned in [SmoothGrad](https://arxiv.org/abs/1706.03825) paper but it was something that was easily missable which we later realized :sweat_smile:.  
